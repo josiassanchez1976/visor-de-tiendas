@@ -1,23 +1,40 @@
 
+import os
 import requests
 import json
 import time
 
-GOOGLE_API_KEY = "TU_API_KEY"  # ← Reemplaza con tu clave real
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+TIMEOUT = 10
 
 def obtener_categoria(place_id):
-    url = f"https://maps.googleapis.com/maps/api/place/details/json?place_id={place_id}&fields=types&key={GOOGLE_API_KEY}"
-    respuesta = requests.get(url)
-    datos = respuesta.json()
-    if 'result' in datos and 'types' in datos['result']:
-        return datos['result']['types'][0]  # Categoría principal
+    url = (
+        "https://maps.googleapis.com/maps/api/place/details/json"
+    )
+    params = {
+        "place_id": place_id,
+        "fields": "types",
+        "key": GOOGLE_API_KEY,
+    }
+    try:
+        resp = requests.get(url, params=params, timeout=TIMEOUT)
+        datos = resp.json()
+    except requests.RequestException:
+        return "Categoría no encontrada"
+
+    if "result" in datos and "types" in datos["result"]:
+        return datos["result"]["types"][0]
     return "Categoría no encontrada"
 
 def buscar_tiendas(ciudad, estado):
     query = f"rebar in {ciudad}, {estado}"
-    url = f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={GOOGLE_API_KEY}"
-    respuesta = requests.get(url)
-    resultados = respuesta.json().get("results", [])
+    url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+    params = {"query": query, "key": GOOGLE_API_KEY}
+    try:
+        respuesta = requests.get(url, params=params, timeout=TIMEOUT)
+        resultados = respuesta.json().get("results", [])
+    except requests.RequestException:
+        resultados = []
     tiendas = []
     for r in resultados:
         nombre = r.get("name", "")
@@ -47,6 +64,8 @@ def guardar_resultados(tiendas, archivo="resultados.json"):
         json.dump(existentes, f, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
+    if not GOOGLE_API_KEY:
+        raise ValueError("GOOGLE_API_KEY no definido en variables de entorno")
     ciudad = input("Ciudad: ").strip()
     estado = input("Estado (abreviado): ").strip().upper()
     resultados = buscar_tiendas(ciudad, estado)
