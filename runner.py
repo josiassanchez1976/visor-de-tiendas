@@ -1,12 +1,15 @@
 
 import json
 import os
+from dotenv import load_dotenv
 from memoria import cargar_memoria, guardar_memoria, ya_existe
 from geocoding import obtener_coordenadas_y_radio
 from places_search import buscar_lugares
 
+load_dotenv()
+
 TIENDAS_FILE = "tiendas_guardadas.json"
-API_KEY = "AIzaSyBOcCSXuwaRlQ3s0ttDcMOLBswCMjzsRYg"  
+API_KEY = os.getenv("GOOGLE_API_KEY", "")
 
 def guardar_tiendas_formateadas(memoria):
     datos = {}
@@ -18,7 +21,9 @@ def guardar_tiendas_formateadas(memoria):
             "tienda": item["Nombre"],
             "categoria": item.get("Categoría", "No especificada"),
             "direccion": item["Dirección"],
-            "telefono": item["Teléfono"]
+            "telefono": item["Teléfono"],
+            "latitud": item.get("Latitud"),
+            "longitud": item.get("Longitud"),
         }
         if nueva not in datos[estado][ciudad]:
             datos[estado][ciudad].append(nueva)
@@ -26,6 +31,8 @@ def guardar_tiendas_formateadas(memoria):
         json.dump(datos, f, indent=2, ensure_ascii=False)
 
 def ejecutar_busqueda(estado, ciudades, keywords, optimizar, buscar_telefono):
+    if not API_KEY:
+        raise ValueError("GOOGLE_API_KEY no definido en variables de entorno")
     memoria = cargar_memoria()
     total_nuevas = 0
     errores = []
@@ -43,13 +50,19 @@ def ejecutar_busqueda(estado, ciudades, keywords, optimizar, buscar_telefono):
             resultados = buscar_lugares(API_KEY, lat, lng, radio, kw, buscar_telefono)
             nuevos = 0
             for lugar in resultados:
+                loc = (
+                    lugar.get("geometry", {})
+                    .get("location", {})
+                )
                 tienda = {
                     "Nombre": lugar.get("name", "N/A"),
                     "Dirección": lugar.get("vicinity", "N/A"),
                     "Ciudad": ciudad,
                     "Estado": estado,
                     "Teléfono": lugar.get("telefono", "No disponible"),
-                    "Categoría": lugar.get("categoria", "No especificada")
+                    "Categoría": lugar.get("categoria", "No especificada"),
+                    "Latitud": loc.get("lat"),
+                    "Longitud": loc.get("lng"),
                 }
                 if not ya_existe(tienda, memoria):
                     memoria.append(tienda)
