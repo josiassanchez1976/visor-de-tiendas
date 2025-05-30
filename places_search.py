@@ -1,48 +1,79 @@
 
-import requests
-import time
+import asyncio
+from typing import List
+
+import aiohttp
+
+TIMEOUT = 10
 
 def buscar_lugares(api_key, lat, lng, radio, keyword, buscar_telefono):
+    """Función sincrónica que envuelve a ``buscar_lugares_async``."""
+    return asyncio.run(
+        buscar_lugares_async(api_key, lat, lng, radio, keyword, buscar_telefono)
+    )
+
+
+async def buscar_lugares_async(api_key, lat, lng, radio, keyword, buscar_telefono) -> List[dict]:
     url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
     params = {
         "location": f"{lat},{lng}",
         "radius": radio,
         "keyword": keyword,
-        "key": api_key
+        "key": api_key,
     }
-    resp = requests.get(url, params=params).json()
-    resultados = []
-    for lugar in resp.get("results", []):
-        tienda = lugar.copy()
-        tienda["telefono"] = "No disponible"
-        tienda["categoria"] = "No especificada"
+    timeout = aiohttp.ClientTimeout(total=TIMEOUT)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        async with session.get(url, params=params) as resp:
+            if resp.status != 200:
+                return []
+            data = await resp.json()
 
-        if "place_id" in lugar:
-            telefono, categoria = obtener_detalles(api_key, lugar["place_id"])
-            if telefono:
-                tienda["telefono"] = telefono
-            if categoria:
-                tienda["categoria"] = categoria
+        resultados = []
+        tareas = []
+        tiendas_detalle = []
+        for lugar in data.get("results", []):
+            tienda = lugar.copy()
+            tienda["telefono"] = "No disponible"
+            tienda["categoria"] = "No especificada"
+            resultados.append(tienda)
 
-            if buscar_telefono:
-                time.sleep(1)
+            if buscar_telefono and "place_id" in lugar:
+                tiendas_detalle.append(tienda)
+                tareas.append(
+                    obtener_detalles_async(session, api_key, lugar["place_id"])
+                )
 
-        resultados.append(tienda)
-    return resultados
+        if tareas:
+            detalles = await asyncio.gather(*tareas, return_exceptions=True)
+            for tienda, detalle in zip(tiendas_detalle, detalles):
+                if isinstance(detalle, tuple):
+                    tel, cat = detalle
+                    if tel:
+                        tienda["telefono"] = tel
+                    if cat:
+                        tienda["categoria"] = cat
 
-def obtener_detalles(api_key, place_id):
+        return resultados
+
+async def obtener_detalles_async(session, api_key, place_id):
     url = "https://maps.googleapis.com/maps/api/place/details/json"
     params = {
         "place_id": place_id,
         "fields": "formatted_phone_number,types",
-        "key": api_key
+        "key": api_key,
     }
-    resp = requests.get(url, params=params).json()
+    try:
+        async with session.get(url, params=params) as resp:
+            if resp.status != 200:
+                return None, None
+            data = await resp.json()
+    except aiohttp.ClientError:
+        return None, None
+
     telefono = "No disponible"
     categoria = "No especificada"
-
-    if resp.get("status") == "OK" and "result" in resp:
-        result = resp["result"]
+    if data.get("status") == "OK" and "result" in data:
+        result = data["result"]
         if "formatted_phone_number" in result:
             telefono = result["formatted_phone_number"]
         if "types" in result and isinstance(result["types"], list) and result["types"]:
