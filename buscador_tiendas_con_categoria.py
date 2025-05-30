@@ -1,40 +1,60 @@
-
-import requests
+import os
 import json
-import time
+import asyncio
+import aiohttp
+from dotenv import load_dotenv
 
-GOOGLE_API_KEY = "TU_API_KEY"  # ← Reemplaza con tu clave real
+load_dotenv()
+API_KEY = os.getenv("GOOGLE_API_KEY", "")
+TIMEOUT = 10
 
-def obtener_categoria(place_id):
-    url = f"https://maps.googleapis.com/maps/api/place/details/json?place_id={place_id}&fields=types&key={GOOGLE_API_KEY}"
-    respuesta = requests.get(url)
-    datos = respuesta.json()
-    if 'result' in datos and 'types' in datos['result']:
-        return datos['result']['types'][0]  # Categoría principal
+if not API_KEY:
+    raise SystemExit("GOOGLE_API_KEY no definido")
+
+async def obtener_categoria(session, place_id):
+    url = "https://maps.googleapis.com/maps/api/place/details/json"
+    params = {"place_id": place_id, "fields": "types", "key": API_KEY}
+    async with session.get(url, params=params) as resp:
+        if resp.status != 200:
+            return "Categoría no encontrada"
+        data = await resp.json()
+    if "result" in data and "types" in data["result"]:
+        return data["result"]["types"][0]
     return "Categoría no encontrada"
 
-def buscar_tiendas(ciudad, estado):
+async def buscar_tiendas_async(ciudad, estado):
     query = f"rebar in {ciudad}, {estado}"
-    url = f"https://maps.googleapis.com/maps/api/place/textsearch/json?query={query}&key={GOOGLE_API_KEY}"
-    respuesta = requests.get(url)
-    resultados = respuesta.json().get("results", [])
-    tiendas = []
-    for r in resultados:
-        nombre = r.get("name", "")
-        direccion = r.get("formatted_address", "")
-        place_id = r.get("place_id", "")
-        telefono = "No disponible"  # Opcional: puedes agregar una llamada a place/details para extraerlo
-        categoria = obtener_categoria(place_id)
-        tiendas.append({
-            "nombre": nombre,
-            "direccion": direccion,
-            "ciudad": ciudad,
-            "estado": estado,
-            "teléfono": telefono,
-            "categoría": categoria
-        })
-        time.sleep(1)  # Evitar límite de peticiones
-    return tiendas
+    url = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+    params = {"query": query, "key": API_KEY}
+    timeout = aiohttp.ClientTimeout(total=TIMEOUT)
+    async with aiohttp.ClientSession(timeout=timeout) as session:
+        async with session.get(url, params=params) as resp:
+            if resp.status != 200:
+                return []
+            resultados = (await resp.json()).get("results", [])
+        tareas = []
+        tiendas = []
+        for r in resultados:
+            nombre = r.get("name", "")
+            direccion = r.get("formatted_address", "")
+            place_id = r.get("place_id", "")
+            tiendas.append({
+                "nombre": nombre,
+                "direccion": direccion,
+                "ciudad": ciudad,
+                "estado": estado,
+                "teléfono": "No disponible",
+                "categoría": ""
+            })
+            tareas.append(obtener_categoria(session, place_id))
+        cats = await asyncio.gather(*tareas, return_exceptions=True)
+        for tienda, cat in zip(tiendas, cats):
+            tienda["categoría"] = cat if isinstance(cat, str) else "Categoría no encontrada"
+        return tiendas
+
+def buscar_tiendas(ciudad, estado):
+    return asyncio.run(buscar_tiendas_async(ciudad, estado))
+
 
 def guardar_resultados(tiendas, archivo="resultados.json"):
     try:
@@ -45,6 +65,7 @@ def guardar_resultados(tiendas, archivo="resultados.json"):
     existentes.extend(tiendas)
     with open(archivo, "w", encoding="utf-8") as f:
         json.dump(existentes, f, indent=2, ensure_ascii=False)
+
 
 if __name__ == "__main__":
     ciudad = input("Ciudad: ").strip()
