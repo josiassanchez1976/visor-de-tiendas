@@ -3,3 +3,7 @@ fastapi
 uvicorn
 requests
 pytest
+rapidfuzz
+python-dotenv
+aiohttp
+pytest-asyncio

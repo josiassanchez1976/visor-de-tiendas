@@ -3,6 +3,7 @@ import streamlit as st
 import json
 import os
 from runner import ejecutar_busqueda
+from geocoding import obtener_coordenadas_y_radio, distancia_millas
 
 st.set_page_config(page_title="Buscador Inteligente de Tiendas", layout="wide")
 st.title("🔍 Buscador Inteligente de Tiendas")
@@ -95,15 +96,43 @@ for estado_k, ciudades_k in tiendas.items():
                 "Nombre": tienda.get("tienda", "Sin nombre"),
                 "Dirección": tienda.get("direccion", "Desconocida"),
                 "Teléfono": tienda.get("telefono", "No disponible"),
-                "Categoría": tienda.get("categoria", "No especificada")
+                "Categoría": tienda.get("categoria", "No especificada"),
+                "Latitud": tienda.get("latitud"),
+                "Longitud": tienda.get("longitud"),
             })
 
 if not datos:
     st.warning("❗️ No hay tiendas guardadas aún.")
 else:
     estado_sel = st.selectbox("Filtrar por estado", ["Todos"] + sorted({d["Estado"] for d in datos}))
-    ciudad_sel = st.selectbox("Filtrar por ciudad", ["Todos"] + sorted({d["Ciudad"] for d in datos if d["Estado"] == estado_sel or estado_sel == "Todos"}))
-    filtrados = [d for d in datos if (estado_sel == "Todos" or d["Estado"] == estado_sel) and (ciudad_sel == "Todos" or d["Ciudad"] == ciudad_sel)]
+    ciudad_sel = st.selectbox(
+        "Filtrar por ciudad",
+        ["Todos"] + sorted({d["Ciudad"] for d in datos if d["Estado"] == estado_sel or estado_sel == "Todos"}),
+    )
+    filtrados = [
+        d
+        for d in datos
+        if (estado_sel == "Todos" or d["Estado"] == estado_sel)
+        and (ciudad_sel == "Todos" or d["Ciudad"] == ciudad_sel)
+    ]
+
+    zip_filtrar = st.text_input("Filtrar por ZIP code (opcional)").strip()
+    dist_millas = st.number_input(
+        "Distancia máxima en millas", min_value=0.0, value=0.0, step=1.0
+    )
+    if zip_filtrar and dist_millas > 0:
+        api_key = os.getenv("GOOGLE_API_KEY", "")
+        lat_zip, lng_zip, _ = obtener_coordenadas_y_radio(api_key, zip_filtrar)
+        if lat_zip and lng_zip:
+            filtrados = [
+                d
+                for d in filtrados
+                if d.get("Latitud") is not None
+                and d.get("Longitud") is not None
+                and distancia_millas(lat_zip, lng_zip, d["Latitud"], d["Longitud"]) <= dist_millas
+            ]
+        else:
+            st.warning("No se encontraron coordenadas para el ZIP code")
 
     st.markdown(f"### 🏪 Total tiendas: {len(filtrados)}")
     for i, tienda in enumerate(filtrados):
