@@ -2,7 +2,8 @@
 import streamlit as st
 import json
 import os
-from runner import ejecutar_busqueda
+from runner import ejecutar_busqueda, guardar_tiendas_formateadas
+from memoria import cargar_memoria, eliminar_tienda, eliminar_por_categoria
 
 st.set_page_config(page_title="Buscador Inteligente de Tiendas", layout="wide")
 st.title("🔍 Buscador Inteligente de Tiendas")
@@ -82,29 +83,35 @@ if estados_ciudades:
 
 # VISOR DE TIENDAS GUARDADAS
 st.header("📋 Visor de Tiendas Guardadas")
-tiendas = cargar_json(ARCHIVO_TIENDAS)
+memoria = cargar_memoria()
 notas_guardadas = cargar_json(ARCHIVO_NOTAS)
 
-datos = []
-for estado_k, ciudades_k in tiendas.items():
-    for ciudad_k, lista in ciudades_k.items():
-        for tienda in lista:
-            datos.append({
-                "Estado": estado_k,
-                "Ciudad": ciudad_k,
-                "Nombre": tienda.get("tienda", "Sin nombre"),
-                "Dirección": tienda.get("direccion", "Desconocida"),
-                "Teléfono": tienda.get("telefono", "No disponible"),
-                "Categoría": tienda.get("categoria", "No especificada")
-            })
+datos = memoria
 
 if not datos:
     st.warning("❗️ No hay tiendas guardadas aún.")
 else:
+    categorias = sorted({d.get("Categoría", "No especificada") for d in datos})
     estado_sel = st.selectbox("Filtrar por estado", ["Todos"] + sorted({d["Estado"] for d in datos}))
     ciudad_sel = st.selectbox("Filtrar por ciudad", ["Todos"] + sorted({d["Ciudad"] for d in datos if d["Estado"] == estado_sel or estado_sel == "Todos"}))
-    filtrados = [d for d in datos if (estado_sel == "Todos" or d["Estado"] == estado_sel) and (ciudad_sel == "Todos" or d["Ciudad"] == ciudad_sel)]
+    categoria_sel = st.selectbox("Filtrar por categoría", ["Todas"] + categorias)
+    filtrados = [
+        (idx, d) for idx, d in enumerate(datos)
+        if (estado_sel == "Todos" or d["Estado"] == estado_sel)
+        and (ciudad_sel == "Todos" or d["Ciudad"] == ciudad_sel)
+        and (categoria_sel == "Todas" or d.get("Categoría") == categoria_sel)
+    ]
+
+    if categoria_sel != "Todas" and st.button("🗑️ Eliminar todas las tiendas de la categoría seleccionada"):
+        eliminadas = eliminar_por_categoria(categoria_sel)
+        guardar_tiendas_formateadas(cargar_memoria())
+        st.success(f"Se eliminaron {eliminadas} tiendas de la categoría {categoria_sel}.")
+        st.experimental_rerun()
 
     st.markdown(f"### 🏪 Total tiendas: {len(filtrados)}")
-    for i, tienda in enumerate(filtrados):
+    for i, tienda in filtrados:
         mostrar_tienda(tienda, i, notas_guardadas)
+        if st.button(f"🗑️ Eliminar tienda {i}"):
+            if eliminar_tienda(i):
+                guardar_tiendas_formateadas(cargar_memoria())
+                st.experimental_rerun()

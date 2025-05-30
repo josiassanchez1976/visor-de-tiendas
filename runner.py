@@ -1,12 +1,15 @@
 
 import json
 import os
+from dotenv import load_dotenv
 from memoria import cargar_memoria, guardar_memoria, ya_existe
 from geocoding import obtener_coordenadas_y_radio
 from places_search import buscar_lugares
 
+load_dotenv()
+
 TIENDAS_FILE = "tiendas_guardadas.json"
-API_KEY = "AIzaSyBOcCSXuwaRlQ3s0ttDcMOLBswCMjzsRYg"  
+API_KEY = os.getenv("GOOGLE_API_KEY", "")
 
 def guardar_tiendas_formateadas(memoria):
     datos = {}
@@ -26,6 +29,8 @@ def guardar_tiendas_formateadas(memoria):
         json.dump(datos, f, indent=2, ensure_ascii=False)
 
 def ejecutar_busqueda(estado, ciudades, keywords, optimizar, buscar_telefono):
+    if not API_KEY:
+        raise ValueError("GOOGLE_API_KEY no definido en variables de entorno")
     memoria = cargar_memoria()
     total_nuevas = 0
     errores = []
