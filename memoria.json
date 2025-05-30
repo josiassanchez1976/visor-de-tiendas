@@ -1,0 +1,370 @@
+[
+  {
+    "Nombre": "Summit Ace of Abbeville",
+    "Direcci\u00f3n": "809 W Greenwood St, Abbeville",
+    "Ciudad": "abbeville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(706) 872-6647",
+    "Categor\u00eda": "Hardware Store"
+  },
+  {
+    "Nombre": "Abbeville Hardware",
+    "Direcci\u00f3n": "100 S Main St, Abbeville",
+    "Ciudad": "abbeville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(864) 366-2836",
+    "Categor\u00eda": "Hardware Store"
+  },
+  {
+    "Nombre": "Town & Country Hardware",
+    "Direcci\u00f3n": "5900 Dollarway Rd, White Hall",
+    "Ciudad": "white hall",
+    "Estado": "al",
+    "Tel\u00e9fono": "(870) 247-3412",
+    "Categor\u00eda": "Hardware Store"
+  },
+  {
+    "Nombre": "Grainger Industrial Supply",
+    "Direcci\u00f3n": "505 Saw Mill River Rd, Elmsford",
+    "Ciudad": "white plains",
+    "Estado": "al",
+    "Tel\u00e9fono": "(800) 472-4643",
+    "Categor\u00eda": "Store"
+  },
+  {
+    "Nombre": "The Home Depot",
+    "Direcci\u00f3n": "1860 E Main St, Woodland",
+    "Ciudad": "woodland",
+    "Estado": "al",
+    "Tel\u00e9fono": "(530) 661-1201",
+    "Categor\u00eda": "Hardware Store"
+  },
+  {
+    "Nombre": "Parker's Building Supply - Woodville",
+    "Direcci\u00f3n": "910 US-69, Woodville",
+    "Ciudad": "woodville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(409) 283-7780",
+    "Categor\u00eda": "Hardware Store"
+  },
+  {
+    "Nombre": "Re-Steel Supply Co, York, PA",
+    "Direcci\u00f3n": "1412 6th Ave, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(800) 876-8216",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "TVT SALVAGE LLC",
+    "Direcci\u00f3n": "219 Old Calhoun Falls Rd, Abbeville",
+    "Ciudad": "abbeville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(864) 447-7439",
+    "Categor\u00eda": "Store"
+  },
+  {
+    "Nombre": "Championship Auto & Towing",
+    "Direcci\u00f3n": "1309 Hwy 28 S, Abbeville",
+    "Ciudad": "abbeville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(864) 366-5051",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Beasley's Garage & Muffler",
+    "Direcci\u00f3n": "107 Cherry St, Abbeville",
+    "Ciudad": "abbeville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(864) 366-8218",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Honeycutt Garage & Towing",
+    "Direcci\u00f3n": "1460 Minor Pkwy, Birmingham",
+    "Ciudad": "adamsville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(877) 724-6639",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "West & Sons Towing, Inc.",
+    "Direcci\u00f3n": "1821 W Fullerton Ave, Addison",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 627-4466",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Top Notch Towing & Recovery",
+    "Direcci\u00f3n": "2nd Ave, Bensenville",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 765-2504",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Ernie\u2019s Towing Service",
+    "Direcci\u00f3n": "1740 Cortland Ct unit e, Addison",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 627-8127",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Sanchez Towing",
+    "Direcci\u00f3n": "332 E North Ave, Villa Park",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 670-3937",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Veteran's Towing Services Villa Park",
+    "Direcci\u00f3n": "60 Hill St, Villa Park",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 880-8387",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Snatch N' Recovery",
+    "Direcci\u00f3n": "463 S Vista Ave, Addison",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 816-5776",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Jonnys Heavy Duty-Semi Truck Towing & Recovery, Inc.",
+    "Direcci\u00f3n": "612 Western Ave, Lombard",
+    "Ciudad": "addison",
+    "Estado": "al",
+    "Tel\u00e9fono": "(630) 691-3333",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Insley\u2019s Towing & Recovery",
+    "Direcci\u00f3n": "4801 Dollarway Rd, Pine Bluff",
+    "Ciudad": "white hall",
+    "Estado": "al",
+    "Tel\u00e9fono": "(870) 534-4357",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "1st Class Towing",
+    "Direcci\u00f3n": "166 Fulton St, White Plains",
+    "Ciudad": "white plains",
+    "Estado": "al",
+    "Tel\u00e9fono": "(914) 948-7713",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "New York Tires & Towing LLC",
+    "Direcci\u00f3n": "118 Oakley Ave, White Plains",
+    "Ciudad": "white plains",
+    "Estado": "al",
+    "Tel\u00e9fono": "(914) 240-3324",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Glen's Towing",
+    "Direcci\u00f3n": "110 Nepperhan Ave, Elmsford",
+    "Ciudad": "white plains",
+    "Estado": "al",
+    "Tel\u00e9fono": "(914) 347-7550",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Critics Choice Towing of Westchester",
+    "Direcci\u00f3n": "245 S Central Ave, Hartsdale",
+    "Ciudad": "white plains",
+    "Estado": "al",
+    "Tel\u00e9fono": "(914) 997-6585",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Empire State Recovery & Towing Inc.",
+    "Direcci\u00f3n": "152 Virginia Rd, White Plains",
+    "Ciudad": "white plains",
+    "Estado": "al",
+    "Tel\u00e9fono": "(914) 682-7511",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "FRANK'S Towing Plus",
+    "Direcci\u00f3n": "31079 US-82, Whitesboro",
+    "Ciudad": "whitesboro",
+    "Estado": "al",
+    "Tel\u00e9fono": "(903) 564-9955",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Happy Dave's Wrecker Services",
+    "Direcci\u00f3n": "27513 TX-56, Whitesboro",
+    "Ciudad": "whitesboro",
+    "Estado": "al",
+    "Tel\u00e9fono": "(903) 564-7283",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Happy Dave's Wrecker Services",
+    "Direcci\u00f3n": "59 Shawnee Trail W, Whitesboro",
+    "Ciudad": "whitesboro",
+    "Estado": "al",
+    "Tel\u00e9fono": "(903) 564-7283",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Express Recovery",
+    "Direcci\u00f3n": "7872 202nd Rd, Winfield",
+    "Ciudad": "winfield",
+    "Estado": "al",
+    "Tel\u00e9fono": "(620) 222-4460",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "B and L Truck and Auto",
+    "Direcci\u00f3n": "15469 US-77, Winfield",
+    "Ciudad": "winfield",
+    "Estado": "al",
+    "Tel\u00e9fono": "(620) 221-3309",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Citizens Towing & Impound",
+    "Direcci\u00f3n": "1244 Fortna Ave, Woodland",
+    "Ciudad": "woodland",
+    "Estado": "al",
+    "Tel\u00e9fono": "(530) 662-5647",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "LJ'S Towing",
+    "Direcci\u00f3n": "333 N Pioneer Ave, Woodland",
+    "Ciudad": "woodland",
+    "Estado": "al",
+    "Tel\u00e9fono": "(916) 489-8600",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "AAA AUTO TOWING LLC",
+    "Direcci\u00f3n": "42124 Co Rd 25, Woodland",
+    "Ciudad": "woodland",
+    "Estado": "al",
+    "Tel\u00e9fono": "(530) 545-6666",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Tic Tac Towing llc",
+    "Direcci\u00f3n": "42130 Co Rd 25, Woodland",
+    "Ciudad": "woodland",
+    "Estado": "al",
+    "Tel\u00e9fono": "(530) 662-7394",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Master-Tech",
+    "Direcci\u00f3n": "60 W Main St, Woodland",
+    "Ciudad": "woodland",
+    "Estado": "al",
+    "Tel\u00e9fono": "(530) 668-1340",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "West Hurley Services Center LLC",
+    "Direcci\u00f3n": "305 NY-375, West Hurley",
+    "Ciudad": "woodstock",
+    "Estado": "al",
+    "Tel\u00e9fono": "(845) 679-2811",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Hatch's Towing & Recovery in Woodville, TX",
+    "Direcci\u00f3n": "403 N Beech St, Woodville",
+    "Ciudad": "woodville",
+    "Estado": "al",
+    "Tel\u00e9fono": "(409) 283-3519",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "JR Towing",
+    "Direcci\u00f3n": "586 Madison Ave, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 440-8209",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Mike's Towing & Recovery Inc",
+    "Direcci\u00f3n": "702 N Sherman St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 848-2820",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "DY TOWING SERVICES LLC",
+    "Direcci\u00f3n": "521 Smith St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 758-9173",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Charlie's Repair Service",
+    "Direcci\u00f3n": "795 N Duke St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 846-8386",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Criswell's Towing and Repair",
+    "Direcci\u00f3n": "145 N Albemarle St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 418-6565",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Louie's Auto Service",
+    "Direcci\u00f3n": "2151 Industrial Hwy, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 840-1105",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Louie's Auto Services",
+    "Direcci\u00f3n": "393 Wheatfield St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 846-6191",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "Criswell's Towing and Repair",
+    "Direcci\u00f3n": "1001 E Philadelphia St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 793-9993",
+    "Categor\u00eda": "Point Of Interest"
+  },
+  {
+    "Nombre": "Anderson's Service Center",
+    "Direcci\u00f3n": "1214 W Market St, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 854-6890",
+    "Categor\u00eda": "Car Repair"
+  },
+  {
+    "Nombre": "C&S Towing and Recovery Ltd",
+    "Direcci\u00f3n": "1000-01 Loucks Mill Rd, York",
+    "Ciudad": "york",
+    "Estado": "al",
+    "Tel\u00e9fono": "(717) 848-8220",
+    "Categor\u00eda": "Point Of Interest"
+  }
+]

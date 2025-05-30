@@ -1,0 +1,302 @@
+{
+  "al": {
+    "abbeville": [
+      {
+        "tienda": "Summit Ace of Abbeville",
+        "categoria": "Hardware Store",
+        "direccion": "809 W Greenwood St, Abbeville",
+        "telefono": "(706) 872-6647"
+      },
+      {
+        "tienda": "Abbeville Hardware",
+        "categoria": "Hardware Store",
+        "direccion": "100 S Main St, Abbeville",
+        "telefono": "(864) 366-2836"
+      },
+      {
+        "tienda": "TVT SALVAGE LLC",
+        "categoria": "Store",
+        "direccion": "219 Old Calhoun Falls Rd, Abbeville",
+        "telefono": "(864) 447-7439"
+      },
+      {
+        "tienda": "Championship Auto & Towing",
+        "categoria": "Point Of Interest",
+        "direccion": "1309 Hwy 28 S, Abbeville",
+        "telefono": "(864) 366-5051"
+      },
+      {
+        "tienda": "Beasley's Garage & Muffler",
+        "categoria": "Car Repair",
+        "direccion": "107 Cherry St, Abbeville",
+        "telefono": "(864) 366-8218"
+      }
+    ],
+    "white hall": [
+      {
+        "tienda": "Town & Country Hardware",
+        "categoria": "Hardware Store",
+        "direccion": "5900 Dollarway Rd, White Hall",
+        "telefono": "(870) 247-3412"
+      },
+      {
+        "tienda": "Insley’s Towing & Recovery",
+        "categoria": "Point Of Interest",
+        "direccion": "4801 Dollarway Rd, Pine Bluff",
+        "telefono": "(870) 534-4357"
+      }
+    ],
+    "white plains": [
+      {
+        "tienda": "Grainger Industrial Supply",
+        "categoria": "Store",
+        "direccion": "505 Saw Mill River Rd, Elmsford",
+        "telefono": "(800) 472-4643"
+      },
+      {
+        "tienda": "1st Class Towing",
+        "categoria": "Point Of Interest",
+        "direccion": "166 Fulton St, White Plains",
+        "telefono": "(914) 948-7713"
+      },
+      {
+        "tienda": "New York Tires & Towing LLC",
+        "categoria": "Point Of Interest",
+        "direccion": "118 Oakley Ave, White Plains",
+        "telefono": "(914) 240-3324"
+      },
+      {
+        "tienda": "Glen's Towing",
+        "categoria": "Car Repair",
+        "direccion": "110 Nepperhan Ave, Elmsford",
+        "telefono": "(914) 347-7550"
+      },
+      {
+        "tienda": "Critics Choice Towing of Westchester",
+        "categoria": "Point Of Interest",
+        "direccion": "245 S Central Ave, Hartsdale",
+        "telefono": "(914) 997-6585"
+      },
+      {
+        "tienda": "Empire State Recovery & Towing Inc.",
+        "categoria": "Point Of Interest",
+        "direccion": "152 Virginia Rd, White Plains",
+        "telefono": "(914) 682-7511"
+      }
+    ],
+    "woodland": [
+      {
+        "tienda": "The Home Depot",
+        "categoria": "Hardware Store",
+        "direccion": "1860 E Main St, Woodland",
+        "telefono": "(530) 661-1201"
+      },
+      {
+        "tienda": "Citizens Towing & Impound",
+        "categoria": "Point Of Interest",
+        "direccion": "1244 Fortna Ave, Woodland",
+        "telefono": "(530) 662-5647"
+      },
+      {
+        "tienda": "LJ'S Towing",
+        "categoria": "Point Of Interest",
+        "direccion": "333 N Pioneer Ave, Woodland",
+        "telefono": "(916) 489-8600"
+      },
+      {
+        "tienda": "AAA AUTO TOWING LLC",
+        "categoria": "Point Of Interest",
+        "direccion": "42124 Co Rd 25, Woodland",
+        "telefono": "(530) 545-6666"
+      },
+      {
+        "tienda": "Tic Tac Towing llc",
+        "categoria": "Point Of Interest",
+        "direccion": "42130 Co Rd 25, Woodland",
+        "telefono": "(530) 662-7394"
+      },
+      {
+        "tienda": "Master-Tech",
+        "categoria": "Car Repair",
+        "direccion": "60 W Main St, Woodland",
+        "telefono": "(530) 668-1340"
+      }
+    ],
+    "woodville": [
+      {
+        "tienda": "Parker's Building Supply - Woodville",
+        "categoria": "Hardware Store",
+        "direccion": "910 US-69, Woodville",
+        "telefono": "(409) 283-7780"
+      },
+      {
+        "tienda": "Hatch's Towing & Recovery in Woodville, TX",
+        "categoria": "Car Repair",
+        "direccion": "403 N Beech St, Woodville",
+        "telefono": "(409) 283-3519"
+      }
+    ],
+    "york": [
+      {
+        "tienda": "Re-Steel Supply Co, York, PA",
+        "categoria": "Point Of Interest",
+        "direccion": "1412 6th Ave, York",
+        "telefono": "(800) 876-8216"
+      },
+      {
+        "tienda": "JR Towing",
+        "categoria": "Point Of Interest",
+        "direccion": "586 Madison Ave, York",
+        "telefono": "(717) 440-8209"
+      },
+      {
+        "tienda": "Mike's Towing & Recovery Inc",
+        "categoria": "Point Of Interest",
+        "direccion": "702 N Sherman St, York",
+        "telefono": "(717) 848-2820"
+      },
+      {
+        "tienda": "DY TOWING SERVICES LLC",
+        "categoria": "Point Of Interest",
+        "direccion": "521 Smith St, York",
+        "telefono": "(717) 758-9173"
+      },
+      {
+        "tienda": "Charlie's Repair Service",
+        "categoria": "Car Repair",
+        "direccion": "795 N Duke St, York",
+        "telefono": "(717) 846-8386"
+      },
+      {
+        "tienda": "Criswell's Towing and Repair",
+        "categoria": "Point Of Interest",
+        "direccion": "145 N Albemarle St, York",
+        "telefono": "(717) 418-6565"
+      },
+      {
+        "tienda": "Louie's Auto Service",
+        "categoria": "Car Repair",
+        "direccion": "2151 Industrial Hwy, York",
+        "telefono": "(717) 840-1105"
+      },
+      {
+        "tienda": "Louie's Auto Services",
+        "categoria": "Car Repair",
+        "direccion": "393 Wheatfield St, York",
+        "telefono": "(717) 846-6191"
+      },
+      {
+        "tienda": "Criswell's Towing and Repair",
+        "categoria": "Point Of Interest",
+        "direccion": "1001 E Philadelphia St, York",
+        "telefono": "(717) 793-9993"
+      },
+      {
+        "tienda": "Anderson's Service Center",
+        "categoria": "Car Repair",
+        "direccion": "1214 W Market St, York",
+        "telefono": "(717) 854-6890"
+      },
+      {
+        "tienda": "C&S Towing and Recovery Ltd",
+        "categoria": "Point Of Interest",
+        "direccion": "1000-01 Loucks Mill Rd, York",
+        "telefono": "(717) 848-8220"
+      }
+    ],
+    "adamsville": [
+      {
+        "tienda": "Honeycutt Garage & Towing",
+        "categoria": "Point Of Interest",
+        "direccion": "1460 Minor Pkwy, Birmingham",
+        "telefono": "(877) 724-6639"
+      }
+    ],
+    "addison": [
+      {
+        "tienda": "West & Sons Towing, Inc.",
+        "categoria": "Point Of Interest",
+        "direccion": "1821 W Fullerton Ave, Addison",
+        "telefono": "(630) 627-4466"
+      },
+      {
+        "tienda": "Top Notch Towing & Recovery",
+        "categoria": "Point Of Interest",
+        "direccion": "2nd Ave, Bensenville",
+        "telefono": "(630) 765-2504"
+      },
+      {
+        "tienda": "Ernie’s Towing Service",
+        "categoria": "Car Repair",
+        "direccion": "1740 Cortland Ct unit e, Addison",
+        "telefono": "(630) 627-8127"
+      },
+      {
+        "tienda": "Sanchez Towing",
+        "categoria": "Point Of Interest",
+        "direccion": "332 E North Ave, Villa Park",
+        "telefono": "(630) 670-3937"
+      },
+      {
+        "tienda": "Veteran's Towing Services Villa Park",
+        "categoria": "Point Of Interest",
+        "direccion": "60 Hill St, Villa Park",
+        "telefono": "(630) 880-8387"
+      },
+      {
+        "tienda": "Snatch N' Recovery",
+        "categoria": "Point Of Interest",
+        "direccion": "463 S Vista Ave, Addison",
+        "telefono": "(630) 816-5776"
+      },
+      {
+        "tienda": "Jonnys Heavy Duty-Semi Truck Towing & Recovery, Inc.",
+        "categoria": "Point Of Interest",
+        "direccion": "612 Western Ave, Lombard",
+        "telefono": "(630) 691-3333"
+      }
+    ],
+    "whitesboro": [
+      {
+        "tienda": "FRANK'S Towing Plus",
+        "categoria": "Point Of Interest",
+        "direccion": "31079 US-82, Whitesboro",
+        "telefono": "(903) 564-9955"
+      },
+      {
+        "tienda": "Happy Dave's Wrecker Services",
+        "categoria": "Point Of Interest",
+        "direccion": "27513 TX-56, Whitesboro",
+        "telefono": "(903) 564-7283"
+      },
+      {
+        "tienda": "Happy Dave's Wrecker Services",
+        "categoria": "Point Of Interest",
+        "direccion": "59 Shawnee Trail W, Whitesboro",
+        "telefono": "(903) 564-7283"
+      }
+    ],
+    "winfield": [
+      {
+        "tienda": "Express Recovery",
+        "categoria": "Point Of Interest",
+        "direccion": "7872 202nd Rd, Winfield",
+        "telefono": "(620) 222-4460"
+      },
+      {
+        "tienda": "B and L Truck and Auto",
+        "categoria": "Car Repair",
+        "direccion": "15469 US-77, Winfield",
+        "telefono": "(620) 221-3309"
+      }
+    ],
+    "woodstock": [
+      {
+        "tienda": "West Hurley Services Center LLC",
+        "categoria": "Car Repair",
+        "direccion": "305 NY-375, West Hurley",
+        "telefono": "(845) 679-2811"
+      }
+    ]
+  }
+}
