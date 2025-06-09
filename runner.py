@@ -6,7 +6,9 @@ from geocoding import obtener_coordenadas_y_radio
 from places_search import buscar_lugares
 
 TIENDAS_FILE = "tiendas_guardadas.json"
-API_KEY = "AIzaSyBOcCSXuwaRlQ3s0ttDcMOLBswCMjzsRYg"  
+API_KEY = os.getenv("GOOGLE_API_KEY")
+if not API_KEY:
+    raise RuntimeError("Missing GOOGLE_API_KEY environment variable")
 
 def guardar_tiendas_formateadas(memoria):
     datos = {}
